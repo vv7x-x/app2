@@ -19,7 +19,7 @@ class AppRouter {
   static const String announcementDetail = '/announcement-detail';
   static const String settings = '/settings';
 
-  static GoRouter createRouter(WidgetRef ref) {
+  static GoRouter createRouter(Ref ref) {
     return GoRouter(
       initialLocation: login,
       redirect: (context, state) {
@@ -28,7 +28,8 @@ class AppRouter {
         return authState.when(
           data: (user) {
             final isLoggedIn = user != null;
-            final isOnLoginPage = state.location == login || state.location == register;
+            final location = state.uri.toString();
+            final isOnLoginPage = location == login || location == register;
             
             if (!isLoggedIn && !isOnLoginPage) {
               return login;
@@ -101,7 +102,7 @@ class AppRouter {
               ),
               const SizedBox(height: 8),
               Text(
-                'المسار: ${state.location}',
+                'المسار: ${state.uri}',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 16),
