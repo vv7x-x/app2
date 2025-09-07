@@ -26,7 +26,7 @@ dependencies:
   qr_flutter: ^4.1.0
 
   # Localization
-  intl: ^0.19.0
+  intl: ^0.20.2
 
   # Utilities
   shared_preferences: ^2.2.3
@@ -51,3 +51,4 @@ flutter:
         - asset: assets/fonts/Cairo-Regular.ttf
         - asset: assets/fonts/Cairo-Bold.ttf
           weight: 700
+          
