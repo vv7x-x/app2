@@ -7,7 +7,7 @@ workflows:
       app_store_connect: codemagic
     environment:
       android_signing:
-        - keystore_reference
+        - android_keystore
       groups:
         - google_play
       vars:
@@ -194,7 +194,7 @@ workflows:
           include: true
     environment:
       android_signing:
-        - keystore_reference
+        - android_keystore
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.specialone.attendance
